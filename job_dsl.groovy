@@ -1,6 +1,6 @@
 pipelineJob('k8s-deploy') {
 
-  def repo = 'https://github.com/infracloudio/app-mono-helmstate.git'
+  def repo = 'https://github.com/sprasad09/app-mono-helmstate.git'
 
   triggers {
     githubPush()
@@ -16,7 +16,7 @@ pipelineJob('k8s-deploy') {
             credentials('github-credentials')
             url(repo)
           }
-          branch('master')
+          branch('kube')
           scriptPath('Jenkinsfile')
           extensions { }
         }
@@ -28,7 +28,7 @@ pipelineJob('k8s-deploy') {
 
 pipelineJob('image-orchestrator-job') {
 
-  def repo = 'https://github.com/infracloudio/app-mono-orchestrator.git'
+  def repo = 'https://github.com/sprasad09/app-mono-orchestrator.git'
 
   description("Pipeline for $repo")
 
@@ -41,7 +41,7 @@ pipelineJob('image-orchestrator-job') {
             credentials('github-credentials')
             url(repo)
           }
-          branch('master')
+          branch('kube')
           scriptPath('Jenkinsfile')
           extensions { }
         }
@@ -52,7 +52,7 @@ pipelineJob('image-orchestrator-job') {
 
 pipelineJob('app-mono-build-job') {
 
-  def repo = 'https://github.com/infracloudio/app-mono.git'
+  def repo = 'https://github.com/StockpileInc/platform.git'
 
   description("Pipeline for $repo")
 
@@ -65,7 +65,7 @@ pipelineJob('app-mono-build-job') {
             credentials('github-credentials')
             url(repo)
           }
-          branch('master')
+          branch('kube')
           scriptPath('Jenkinsfile')
           extensions { }
         }
