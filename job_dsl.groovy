@@ -52,7 +52,7 @@ pipelineJob('image-orchestrator-job') {
 
 pipelineJob('app-mono-build-job') {
 
-  def repo = 'https://github.com/StockpileInc/platform.git'
+  def repo = ''
 
   description("Pipeline for $repo")
 
